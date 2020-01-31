@@ -10,12 +10,14 @@ class CallbackTest {
     @Test
     void shouldTest() {
         open("http://localhost:9999");
-        SelenideElement form = $(".form_size_m");
-        form.$(".input__top").setValue("Василий");
-        form.$(".input_type_tel").setValue("+79270000000");
-        form.$(".checkbox_size_m").click();
-        form.$(".button_view_extra").click();
-        $(".alert-success").shouldHave(exactText("Ваша заявка успешно отправлена!"));
+        SelenideElement form = $("form.form");
+        form.$("[data-test-id=name] input").setValue("Василий Иванов-Петров");
+        form.$("[data-test-id=phone] input").setValue("+79270000000");
+        form.$("[data-test-id=agreement]").click();
+        form.$("[type=button]").click();
+        $("[data-test-id=order-success]")
+                .shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.")
+                );
     }
 }
 
