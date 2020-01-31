@@ -7,6 +7,10 @@ version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
+// кодировка файлов (если используете русский язык в файлах)
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
 repositories {
     mavenCentral()
 }
@@ -19,3 +23,8 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+
+
+
+
