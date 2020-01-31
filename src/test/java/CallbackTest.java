@@ -1,6 +1,5 @@
 
 import com.codeborne.selenide.SelenideElement;
-import org.junit.Test;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.exactText;
@@ -8,9 +7,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 class CallbackTest {
-
     @Test
-
     void shouldTest() {
         open("http://localhost:9999");
         SelenideElement form = $("[data-test-id=callback-form]");
@@ -21,5 +18,4 @@ class CallbackTest {
         $(".alert-success").shouldHave(exactText("Ваша заявка успешно отправлена!"));
     }
 }
-
 
