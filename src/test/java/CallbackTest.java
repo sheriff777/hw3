@@ -10,11 +10,11 @@ class CallbackTest {
     @Test
     void shouldTest() {
         open("http://localhost:9999");
-        SelenideElement form = $("[data-test-id=callback-form]");
-        form.$("[data-test-id=name] input").setValue("Василий");
-        form.$("[data-test-id=phone] input").setValue("+79270000000");
-        form.$("[data-test-id=agreement]").click();
-        form.$("[data-test-id=submit]").click();
+        SelenideElement form = $(".form_size_m");
+        form.$(".input__top").setValue("Василий");
+        form.$(".input_type_tel").setValue("+79270000000");
+        form.$(".checkbox_size_m").click();
+        form.$(".button_view_extra").click();
         $(".alert-success").shouldHave(exactText("Ваша заявка успешно отправлена!"));
     }
 }
